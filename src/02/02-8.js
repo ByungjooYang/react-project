@@ -1,4 +1,14 @@
 //라이브러리 의존성 관리
 //참조 순서에 따른 의존성 문제를 해결함. import 구문을 사용해 script 엘리먼트 없이 연결된 파일 및 의존 파일을 먼저 모두 내려받고 코드를 구동하도록 함.
 
-import MyModule from './MyModule.js';
+import MyModule from './MyModule.js';       //import 구문으로 지정 파일의 기본(default)으로 공유하는 모듈을 불러온다.
+import { ModuleName } from './MyModule.js'; // 이름을 맞춰 모듈 안의 특정 함수 혹은 변수를 참조할 수도 있다.
+import { ModuleName as RenamedModuleName } from './MyModule'; //객체 구조 할당과 유사하게 특정 모듈을 가져올 때 이름이 충돌할 경우 다른 이름으로 변경하여 불러들일 수 있다.
+
+function Func(){
+  MyModule();
+}
+
+export const CONST_VALUE = 0;
+export class MyClass {} // 변수나 클래스의 이름을 다른 파일에서 따로 참조할 수 있도록 정의한다.
+export default new Func(); // 현재 파일이 다른 파일에서 기본(default)으로 참조하게 되는 항목을 정의한다.
