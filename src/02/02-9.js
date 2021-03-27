@@ -64,4 +64,28 @@ function parse3(qs){
 
 }
 
-//========================== reduce 함수
+//========================== reduce 함수 : 배열을 객체로 변환.
+
+function sum(numbers){
+  return numbers.reduce((total, num) => total + num, 0);
+  //첫 인자에 변환 함수, 두 번째 인자에 초깃값(0) 전달
+}
+sum([1, 2, 3, ,4, 5, ,6, 7 ,8 ,9 ,10]); //55
+
+//reduce는 보통 배열을 특정 자료형으로 변환하는데 사용. 배열의 총 합을 구하는 예제라기 보다 배열을 숫자로 변환한 예제이다.
+//reduce를 활용해 배열을 객체로 변환.
+function parse4(qs){
+  const queryString = qs.substr(1);
+  const chunks      = qs.split('&');
+
+  return chunks.map((chunk) => {
+    const [key, value] = chunk.split('=');
+    return {key, value};
+
+  }).reduce((result, item) => {
+    result[item.key] = item.value;
+    return result;
+
+  }, {}); // 초기값 빈 객체 {}
+
+}
