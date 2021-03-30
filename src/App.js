@@ -2,7 +2,9 @@ import './App.css';
 import React, { Component } from 'react';
 import TodaysPlan from './03/TodaysPlan';
 import ChildComponent from './03/ChildComponent';
-import BooleanComponent from './03/BooleanComponent'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
+import BooleanComponent from './03/BooleanComponent';
+import ChildComponent2 from './03/ChildComponent2';
+import DefaultPropsComponent from './03/DefaultPropsComponent'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
 
 /*class App extends React.Component {
     render() {
@@ -32,7 +34,7 @@ import BooleanComponent from './03/BooleanComponent'; //파일 이름 확장자�
     }
 }*/
 
-class App extends React.Component {
+/*class App extends React.Component {
     render() {
         return (
           <div>
@@ -41,6 +43,32 @@ class App extends React.Component {
           </div>
         )
     }
+}*/
+
+/*class App extends React.Component{
+
+  render() {
+    return (
+      <div>
+        <ChildComponent2
+          objValue={{ age: 20 }}
+          requiredStringValue={"문자"}
+        />
+      </div>
+    );
+  }
+
+}*/
+
+class App extends React.Component{
+  render() {
+    return (
+      <div>
+        <DefaultPropsComponent />
+      </div>
+    );
+  }
+
 }
 
 export default App;
