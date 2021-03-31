@@ -4,7 +4,9 @@ import TodaysPlan from './03/TodaysPlan';
 import ChildComponent from './03/ChildComponent';
 import BooleanComponent from './03/BooleanComponent';
 import ChildComponent2 from './03/ChildComponent2';
-import DefaultPropsComponent from './03/DefaultPropsComponent'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
+import DefaultPropsComponent from './03/DefaultPropsComponent';
+import ChildProperty from './03/ChildProperty';
+import StateExample from './03/StateExample'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
 
 /*class App extends React.Component {
     render() {
@@ -60,7 +62,7 @@ import DefaultPropsComponent from './03/DefaultPropsComponent'; //파일 이름 
 
 }*/
 
-class App extends React.Component{
+/*class App extends React.Component{
   render() {
     return (
       <div>
@@ -68,7 +70,29 @@ class App extends React.Component{
       </div>
     );
   }
+}*/
 
+/*class App extends Component {
+    render() {
+      return(
+        <div>
+          <ChildProperty>
+            <div><span>자식 노드</span></div>
+          </ChildProperty>
+        </div>
+
+        );
+    }
+}*/
+
+class App extends Component {
+    render() {
+      return (
+        <div>
+          <StateExample/>
+        </div>
+      )
+    }
 }
 
 export default App;
