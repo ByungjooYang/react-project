@@ -1,12 +1,14 @@
 import './App.css';
 import React, { Component } from 'react';
-import TodaysPlan from './03/TodaysPlan';
+import TodaysPlan from './03/TodaysPlan'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
 import ChildComponent from './03/ChildComponent';
 import BooleanComponent from './03/BooleanComponent';
 import ChildComponent2 from './03/ChildComponent2';
 import DefaultPropsComponent from './03/DefaultPropsComponent';
 import ChildProperty from './03/ChildProperty';
-import StateExample from './03/StateExample'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
+import StateExample from './03/StateExample';
+import ForceUpdateExample from './03/ForceUpdateExample';
+import LifecycleExample from './03/LifecycleExample';
 
 /*class App extends React.Component {
     render() {
@@ -85,6 +87,7 @@ import StateExample from './03/StateExample'; //파일 이름 확장자는 없�
     }
 }*/
 
+/*
 class App extends Component {
     render() {
       return (
@@ -92,6 +95,29 @@ class App extends Component {
           <StateExample/>
         </div>
       )
+    }
+}
+*/
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasDestroy: false };
+    }
+
+    componentDidMount() {
+      this.setState({ hasDestroy: true});
+    }
+
+    render() {
+        return (
+            <div>
+              <div>
+                {this.state.hasDestroy ? null : <LifecycleExample/>}
+              </div>
+                {/*<ForceUpdateExample/>*/}
+            </div>
+        );
     }
 }
 
