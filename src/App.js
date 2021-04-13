@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-/*import TodaysPlan from './03/TodaysPlan'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
+import TodaysPlan from './03/TodaysPlan'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
 import ChildComponent from './03/ChildComponent';
 import BooleanComponent from './03/BooleanComponent';
 import ChildComponent2 from './03/ChildComponent2';
@@ -10,10 +10,12 @@ import StateExample from './03/StateExample';
 import ForceUpdateExample from './03/ForceUpdateExample';
 import LifecycleExample from './03/LifecycleExample';
 import Counter from './03/Counter';
-import NewCounter from './03/NewCounter';*/
+import NewCounter from './03/NewCounter';
 import ListExample from './03/ListExample';
 import TodoList from './03/TodoList';
 import Fragment from './03/Fragment';
+import Counter2 from './03/Counter2';
+import Counter3 from './03/Counter3';
 
 /*class App extends React.Component {
     render() {
@@ -162,13 +164,20 @@ class App extends Component {
 
 }*/
 
-class App extends React.Component{
-
+/*class App extends React.Component{
   render() {
     return (
       <div>
         <Fragment/>
       </div>
+    );
+  }
+}*/
+
+class App extends React.Component{
+  render() {
+    return (
+      <Counter count={this.state.count} onAdd={this.increaseCount.bind(this)} />
     );
   }
 
