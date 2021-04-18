@@ -1,5 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
+import './materialize.css';
+import './sass/materialize.scss';
 import TodaysPlan from './03/TodaysPlan'; //파일 이름 확장자는 없어도 된다. 웹팩 코드 검색 확장자의 기능 덕분이다.
 import ChildComponent from './03/ChildComponent';
 import BooleanComponent from './03/BooleanComponent';
@@ -174,13 +176,28 @@ class App extends Component {
   }
 }*/
 
-class App extends React.Component{
+/*class App extends React.Component{
   render() {
     return (
       <Counter count={this.state.count} onAdd={this.increaseCount.bind(this)} />
     );
   }
 
+}*/
+
+class App extends React.Component{
+  render() {
+    return (
+      <div>
+        <nav>
+          <div class="nav-wrapper">
+            <div>두잇! 리액트 시작하기</div>
+          </div>
+        </nav>
+        <h1>머터리얼 CSS</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
