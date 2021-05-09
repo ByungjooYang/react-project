@@ -51,7 +51,7 @@
     "node-sass": "^4.11.0",
     "react-with-styles-interface-aphrodite": "^5.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "sass-loader": "10.1.1",
+    "sass-loader": "^11.0.1",
     "storybook-addon-jsx": "^7.3.7",
     "web-vitals": "^1.1.0"
   }
