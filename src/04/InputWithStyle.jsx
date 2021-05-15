@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Input from '../03/Input';
-
 
 class InputWithStyle extends PureComponent{
     constructor(props) {
@@ -34,23 +32,23 @@ class InputWithStyle extends PureComponent{
         return (
             <div className="input-field">
                 <input
-                    id        ={`input_${name}`}
-                    className ="validate"
-                    ref       ={this.setRef}
-                    type      ={type}
+                    id        = {`input_${name}`}
+                    className = {`validate ${errorMessage && 'invalid'}`}
+                    ref       = {this.setRef}
+                    type      = {type}
                     onChange  = {this.handleChange}
-                    value     ={value}
+                    value     = {value}
                 />
-                <label htmlFor={`input_${name}`}>
+                <label className="active" htmlFor={`input_${name}`}>
                     {label}
                 </label>
-                { errorMessage && <span className="helper-text">{errorMessage}</span> }
+                { errorMessage && <span className="helper-text" data-error={errorMessage}>{errorMessage}</span> }
             </div>
         );
     }
 }
 
-Input.propTypes = {
+InputWithStyle.propTypes = {
     type         : PropTypes.oneOf(['text', 'number', 'price']),
     name         : PropTypes.string.isRequired,
     value        : PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -60,7 +58,7 @@ Input.propTypes = {
     autoFocus    : PropTypes.bool,
 };
 
-Input.defaultProps = {
+InputWithStyle.defaultProps = {
     onChange  : () => {},
     onFocus   : () => {},
     autoFocus : false,

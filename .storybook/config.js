@@ -2,6 +2,8 @@ import { configure, setAddon } from '@storybook/react';
 import interopRequireDefault from 'babel-runtime/helpers/interopRequireDefault';
 import JSXAddon from 'storybook-addon-jsx';
 
+import '../src/sass/materialize.scss';
+
 function loadStories(){
   //require.context() 함수로 src/stories 폴더의 스토리 목록을 가져온다.
   const context = require.context('../src/stories', true, /Story\.jsx$/);
