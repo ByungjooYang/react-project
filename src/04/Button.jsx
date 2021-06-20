@@ -59,6 +59,8 @@ Button.defaultProps = {
 };
 
 export default withStyles(({color, size, unit}) => ({
+    //버튼의 기본 모양을 구성.
+    //전체 테두리 두께는 1px 이며 2px 의 둥근 테두리 모양이다. 패딩 크기는 unit * 2 이다.
     default : {
         border : 1,
         borderStyles : 'solid',
@@ -81,7 +83,7 @@ export default withStyles(({color, size, unit}) => ({
     },
     xsmall: {
         fontSize : size.xs,
-        padding  : unit,
+        padding  : unit, //unit * 1 크기의 패딩으로 조정
     },
     primary: {
         borderColor     : color.primary,
