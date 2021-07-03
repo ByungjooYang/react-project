@@ -87,7 +87,7 @@ export default withStyles(({color, size, unit}) => ({
     },
     primary: {
         borderColor     : color.primary,
-        color           : color.primary,
+        color           : color.white,
         backgroundColor : color.primary,
     },
     secondary: {
