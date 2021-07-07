@@ -2,9 +2,9 @@
 
 export const LARGE_AND_ABOVE = 'largeAndAbove';
 const BREAKPOINT_NAMES = {
-    LARGE  : 'large',
-    MEDIUM : 'medium',
-    SMALL  : 'small',
+    LARGE  : 'large', //데스크톱 기본 해상도
+    MEDIUM : 'medium', // 태블릿 특화
+    SMALL  : 'small', //모바일 기기 특화
 }
 
 const breakpoints = {
@@ -14,10 +14,9 @@ const breakpoints = {
 };
 
 const responsive = {
-    [LARGE_AND_ABOVE] : `@media (min-width: ${breakpoints[BREAKPOINT_NAMES.LARGE]}px`,
-    [BREAKPOINT_NAMES.SMALL] : `@media (max-width:${breakpoints[BREAKPOINT_NAMES.MEDIUM] - 1}px`,
+    [LARGE_AND_ABOVE] : `@media (min-width: ${breakpoints[BREAKPOINT_NAMES.LARGE]}px)`,
+    [BREAKPOINT_NAMES.SMALL] : `@media (max-width:${breakpoints[BREAKPOINT_NAMES.MEDIUM] - 1}px)`,
     print : '@media print',
-
 };
 
 export default {
