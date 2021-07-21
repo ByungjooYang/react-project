@@ -4,11 +4,22 @@ import { shallow } from 'enzyme';
 import Input from '../../03/Input';
 
 describe('<Input>', () => {
-   it('renders without crashing', () => {
+   /*it('renders without crashing', () => {
       expect(() => {
           shallow(<Input />);
+
       }).not.toThrow();
-   });
+   });*/
+
+    it("has one element", () => {
+        const wrapper = shallow(<Input />);
+
+        //expect 함수가 반환한 toEqual() 함수를 사용하여 반환된 객체의 수를 비교
+        expect(wrapper.length).toEqual(1);
+
+        //expect 함수가 반환한 toHaveLength 함수를 사용하여 .length 값을 비교
+        expect(wrapper).toHaveLength(1);
+    })
 });
 
 /*
